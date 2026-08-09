@@ -2,7 +2,7 @@
 
 Primer proyecto de la serie **Mini proyectos Flutter**. Consistirá en una aplicación Android de una sola pantalla que mostrará un perfil ficticio con una jerarquía visual clara y una composición adaptable.
 
-> Estado actual: mockup preliminar exportado desde OpenDesign. La aplicación Flutter todavía no se ha inicializado.
+> Estado actual: base Flutter inicializada exclusivamente para Android y mockup preliminar exportado desde OpenDesign. La interfaz final todavía no está implementada.
 
 ## Mockup
 
@@ -128,7 +128,7 @@ lib/
 
 ## Cómo ejecutar
 
-Estas instrucciones serán aplicables cuando se inicialice la aplicación:
+Desde esta carpeta, instala las dependencias y comprueba los dispositivos disponibles:
 
 ```bash
 flutter pub get
@@ -136,15 +136,24 @@ flutter devices
 flutter run
 ```
 
+La base no contiene carpetas de plataforma para iOS, web, Windows, macOS ni Linux.
+
+## Validación
+
+Para comprobar la plantilla inicial:
+
+```bash
+flutter analyze
+```
+
 ## Próximos pasos
 
 1. Confirmar que OpenDesign ha terminado la especificación.
-2. Inicializar Flutter exclusivamente para Android.
-3. Incorporar Manrope y definir los tokens visuales.
-4. Implementar la pantalla por componentes.
-5. Verificar adaptación, texto grande y áreas táctiles.
-6. Añadir pruebas de widgets proporcionales al alcance.
-7. Guardar capturas de la implementación para compararlas con el mockup.
+2. Incorporar Manrope y definir los tokens visuales.
+3. Implementar la pantalla por componentes.
+4. Verificar adaptación, texto grande y áreas táctiles.
+5. Añadir pruebas de widgets de forma proporcional al avance.
+6. Guardar capturas de la implementación para compararlas con el mockup.
 
 ## Licencia
 
