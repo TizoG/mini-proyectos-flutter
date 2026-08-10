@@ -1,0 +1,19 @@
+name: mini_proyecto_2_generador_frases
+description: "Segundo mini proyecto Flutter: generador local de frases para Android."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
