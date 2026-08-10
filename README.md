@@ -17,7 +17,7 @@ Cada carpeta contiene una aplicación independiente, su README y los recursos vi
 
 | # | Proyecto | Qué se construirá | Conceptos principales | Estado |
 |---:|---|---|---|---|
-| 1 | [Tarjeta de perfil](./MiniProyecto_1_Tarjeta_Perfil/) | Perfil ficticio de una sola pantalla | Layouts, imágenes, estilos y componentes reutilizables | Base Flutter Android lista · UI pendiente |
+| 1 | [Tarjeta de perfil](./MiniProyecto_1_Tarjeta_Perfil/) | Perfil ficticio de una sola pantalla | Layouts, imágenes, estilos y componentes reutilizables | Primera versión implementada · revisión visual pendiente |
 | 2 | Generador de frases | Frase aleatoria al pulsar un botón | Listas, botones y aleatoriedad | Pendiente |
 | 3 | Selector de estado de ánimo | Selección de emoji con mensaje asociado | `ChoiceChip`, enums y comunicación entre widgets | Pendiente |
 | 4 | Semáforo de hábitos | Seguimiento visual de tres hábitos | Booleanos, color y estados | Pendiente |
