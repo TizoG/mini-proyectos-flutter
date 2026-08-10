@@ -2,7 +2,7 @@
 
 Primer proyecto de la serie **Mini proyectos Flutter**. Consistirá en una aplicación Android de una sola pantalla que mostrará un perfil ficticio con una jerarquía visual clara y una composición adaptable.
 
-> Estado actual: base Flutter inicializada exclusivamente para Android y mockup preliminar exportado desde OpenDesign. La interfaz final todavía no está implementada.
+> Estado actual: primera versión funcional implementada exclusivamente para Android. Quedan pendientes la revisión visual final frente al diseño de OpenDesign y un refactor proporcional por componentes.
 
 ## Mockup
 
@@ -60,7 +60,7 @@ Datos de referencia:
 | Estadísticas | 24 proyectos · 8 años aprendiendo · 12 tecnologías |
 | Habilidades | Flutter · Dart · UI Design · Figma · Git |
 
-## Componentes previstos
+## Componentes de referencia
 
 | Componente | Responsabilidad | Widgets Flutter principales |
 |---|---|---|
@@ -98,7 +98,7 @@ Datos de referencia:
 - Separación entre chips: 8 px.
 - Botón: 52 px de alto y radio de 16 px.
 
-## Datos técnicos previstos
+## Datos técnicos
 
 | Propiedad | Valor |
 |---|---|
@@ -109,7 +109,7 @@ Datos de referencia:
 | Plataformas | Android |
 | Diseño | OpenDesign · Soft Premium |
 
-## Estructura prevista
+## Estructura objetivo
 
 La estructura se mantendrá sencilla y feature-first. No habrá capas de dominio o datos porque esta primera versión no contiene reglas de negocio ni fuentes externas:
 
@@ -140,7 +140,7 @@ La base no contiene carpetas de plataforma para iOS, web, Windows, macOS ni Linu
 
 ## Validación
 
-Para comprobar la plantilla inicial:
+Para comprobar el proyecto:
 
 ```bash
 flutter analyze
@@ -148,12 +148,12 @@ flutter analyze
 
 ## Próximos pasos
 
-1. Confirmar que OpenDesign ha terminado la especificación.
-2. Incorporar Manrope y definir los tokens visuales.
-3. Implementar la pantalla por componentes.
+1. Confirmar que OpenDesign ha terminado la especificación y que el mockup sigue vigente.
+2. Comparar la implementación con el diseño y ajustar tipografía, fondo, espaciados y contenido.
+3. Extraer los bloques visuales de `main.dart` a widgets reutilizables sin introducir capas innecesarias.
 4. Verificar adaptación, texto grande y áreas táctiles.
-5. Añadir pruebas de widgets de forma proporcional al avance.
-6. Guardar capturas de la implementación para compararlas con el mockup.
+5. Añadir pruebas de widgets de forma proporcional al alcance.
+6. Guardar una captura en modo release para compararla con el mockup.
 
 ## Licencia
 
