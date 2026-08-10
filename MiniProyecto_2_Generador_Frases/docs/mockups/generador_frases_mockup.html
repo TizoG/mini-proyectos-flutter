@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Frases — Mockup Android 390×844</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       DESIGN TOKENS — Generador de Frases
+       ======================================== */
+    :root {
+      /* Color palette */
+      --bg: #F7F8FC;
+      --surface: #FFFFFF;
+      --fg: #202338;
+      --fg-secondary: #74788F;
+      --accent: #5B5FEF;
+      --accent-pressed: #4548C8;
+      --lavender: #EEEFFF;
+      --border: #E7E8F0;
+
+      /* Typography */
+      --font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Spacing */
+      --spacing-xs: 4px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+      --spacing-xl: 32px;
+      --spacing-2xl: 40px;
+      --spacing-3xl: 48px;
+
+      /* Border radius */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-card: 0 2px 16px rgba(91, 95, 239, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+      --shadow-button: 0 4px 16px rgba(91, 95, 239, 0.24);
+      --shadow-button-pressed: 0 2px 8px rgba(91, 95, 239, 0.16);
+    }
+
+    /* ========================================
+       BASE / RESET
+       ======================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: #1a1a2e;
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* ========================================
+       PAGE HEADER
+       ======================================== */
+    .page-header {
+      text-align: center;
+      margin-bottom: 48px;
+      max-width: 800px;
+    }
+
+    .page-header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.5;
+    }
+
+    /* ========================================
+       STATES GRID
+       ======================================== */
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+      gap: 40px;
+      max-width: 1700px;
+      width: 100%;
+      justify-items: center;
+    }
+
+    .state-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .state-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .state-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-full);
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* ========================================
+       DEVICE FRAME — Android 390×844
+       ======================================== */
+    .device-frame {
+      width: 390px;
+      height: 844px;
+      background: var(--bg);
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.1),
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Status bar */
+    .status-bar {
+      height: 44px;
+      padding: 12px 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg);
+    }
+
+    .status-time {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--fg);
+    }
+
+    .status-icons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .status-icons svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--fg);
+    }
+
+    /* Safe area top padding */
+    .safe-area-top {
+      height: 12px;
+    }
+
+    /* ========================================
+       APP BAR — QuoteAppBar
+       ======================================== */
+    .app-bar {
+      padding: 8px var(--spacing-lg) 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .app-bar-icon {
+      position: absolute;
+      left: var(--spacing-lg);
+      width: 28px;
+      height: 28px;
+      color: var(--accent);
+      opacity: 0.6;
+    }
+
+    .app-bar-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+
+    /* ========================================
+       HEADER SECTION — QuoteHeader
+       ======================================== */
+    .header-section {
+      padding: var(--spacing-md) var(--spacing-lg) 0;
+      text-align: center;
+    }
+
+    .header-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .header-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--fg);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .header-subtitle {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--fg-secondary);
+      line-height: 1.5;
+    }
+
+    /* ========================================
+       QUOTE CARD — QuoteCard
+       ======================================== */
+    .quote-card-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-lg);
+    }
+
+    .quote-card {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-xl) var(--spacing-lg);
+      box-shadow: var(--shadow-card);
+      width: 100%;
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .quote-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--lavender);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .quote-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--accent);
+      opacity: 0.18;
+    }
+
+    .quote-text {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--fg);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .quote-author {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--fg-secondary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .quote-author::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.4;
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       BOTTOM SECTION
+       ======================================== */
+    .bottom-section {
+      padding: 0 var(--spacing-lg) var(--spacing-lg);
+    }
+
+    /* Generate button — GenerateQuoteButton */
+    .generate-button {
+      width: 100%;
+      height: 54px;
+      border: none;
+      border-radius: var(--radius-lg);
+      background: var(--accent);
+      color: #ffffff;
+      font-family: var(--font-family);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      box-shadow: var(--shadow-button);
+      transition: all 0.15s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .generate-button:hover {
+      background: var(--accent-pressed);
+      box-shadow: var(--shadow-button);
+      transform: translateY(-1px);
+    }
+
+    .generate-button:active,
+    .generate-button.pressed {
+      background: var(--accent-pressed);
+      box-shadow: var(--shadow-button-pressed);
+      transform: translateY(1px);
+    }
+
+    .generate-button svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .helper-text {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--fg-secondary);
+      opacity: 0.7;
+      margin-top: var(--spacing-md);
+      line-height: 1.4;
+    }
+
+    /* Safe area bottom */
+    .safe-area-bottom {
+      height: 20px;
+    }
+
+    /* ========================================
+       SPEC SECTION
+       ======================================== */
+    .spec-section {
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 80px;
+      padding: 48px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .spec-section h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .spec-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .spec-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .spec-row:last-child {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .spec-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .color-swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .color-swatch::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .swatch-bg::before { background: #F7F8FC; }
+    .swatch-surface::before { background: #FFFFFF; }
+    .swatch-fg::before { background: #202338; }
+    .swatch-secondary::before { background: #74788F; }
+    .swatch-accent::before { background: #5B5FEF; }
+    .swatch-pressed::before { background: #4548C8; }
+    .swatch-lavender::before { background: #EEEFFF; }
+    .swatch-border::before { background: #E7E8F0; }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 860px) {
+      .states-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Generador de Frases</h1>
+    <p>MiniProyecto 2 — Mockup Android 390 × 844 px · Material 3 · 4 estados</p>
+  </header>
+
+  <!-- States Grid -->
+  <div class="states-grid">
+
+    <!-- ========== STATE 1: Initial ========== -->
+    <div class="state-container">
+      <div class="state-label"><span class="state-number">1</span> Estado inicial</div>
+      <div class="device-frame" data-od-id="state-initial">
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 16 16"><path d="M1 11.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-3zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-6zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-9zm3-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-11z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/><path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065z"/><path d="M11.025 10.073a.5.5 0 0 0-.075-.838A6.47 6.47 0 0 0 8 8.5a6.47 6.47 0 0 0-2.95.735.5.5 0 1 0 .565.832A5.47 5.47 0 0 1 8 9.5c.94 0 1.83.235 2.61.64a.5.5 0 0 0 .415-.067z"/><circle cx="8" cy="12.5" r="1.5"/></svg>
+            <svg viewBox="0 0 24 14"><rect x="0" y="1" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="4.5" width="2" height="5" rx="1" fill="currentColor"/><rect x="2" y="3" width="14" height="8" rx="1" fill="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="safe-area-top"></div>
+
+        <!-- App Bar -->
+        <div class="app-bar" data-od-id="app-bar">
+          <div class="app-bar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 5v3c0 1 0 1 1 1z"/>
+            </svg>
+          </div>
+          <span class="app-bar-title">Frase del día</span>
+        </div>
+
+        <!-- Header -->
+        <div class="header-section" data-od-id="header">
+          <p class="header-eyebrow">Un poco de inspiración</p>
+          <h1 class="header-title">Encuentra una idea para hoy</h1>
+          <p class="header-subtitle">Pulsa el botón y descubre una nueva frase.</p>
+        </div>
+
+        <!-- Quote Card -->
+        <div class="quote-card-wrapper">
+          <div class="quote-card" data-od-id="quote-card">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+            </div>
+            <p class="quote-text">No tienes que ser grande para empezar, pero tienes que empezar para ser grande.</p>
+            <p class="quote-author">Zig Ziglar</p>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="bottom-section">
+          <button class="generate-button" data-od-id="generate-button">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            Generar otra frase
+          </button>
+          <p class="helper-text">Cada clic es una nueva oportunidad para inspirarte.</p>
+        </div>
+        <div class="safe-area-bottom"></div>
+      </div>
+    </div>
+
+    <!-- ========== STATE 2: After button press ========== -->
+    <div class="state-container">
+      <div class="state-label"><span class="state-number">2</span> Tras pulsar el botón</div>
+      <div class="device-frame" data-od-id="state-after-press">
+        <div class="status-bar">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 16 16"><path d="M1 11.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-3zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-6zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-9zm3-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-11z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/><path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065z"/><path d="M11.025 10.073a.5.5 0 0 0-.075-.838A6.47 6.47 0 0 0 8 8.5a6.47 6.47 0 0 0-2.95.735.5.5 0 1 0 .565.832A5.47 5.47 0 0 1 8 9.5c.94 0 1.83.235 2.61.64a.5.5 0 0 0 .415-.067z"/><circle cx="8" cy="12.5" r="1.5"/></svg>
+            <svg viewBox="0 0 24 14"><rect x="0" y="1" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="4.5" width="2" height="5" rx="1" fill="currentColor"/><rect x="2" y="3" width="14" height="8" rx="1" fill="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="safe-area-top"></div>
+
+        <div class="app-bar">
+          <div class="app-bar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 5v3c0 1 0 1 1 1z"/>
+            </svg>
+          </div>
+          <span class="app-bar-title">Frase del día</span>
+        </div>
+
+        <div class="header-section">
+          <p class="header-eyebrow">Un poco de inspiración</p>
+          <h1 class="header-title">Encuentra una idea para hoy</h1>
+          <p class="header-subtitle">Pulsa el botón y descubre una nueva frase.</p>
+        </div>
+
+        <div class="quote-card-wrapper">
+          <div class="quote-card" data-od-id="quote-card-state2">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+            </div>
+            <p class="quote-text">Aprende como si fueras a vivir para siempre y vive como si fueras a morir mañana.</p>
+            <p class="quote-author">Mahatma Gandhi</p>
+          </div>
+        </div>
+
+        <div class="bottom-section">
+          <button class="generate-button" data-od-id="generate-button-state2">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            Generar otra frase
+          </button>
+          <p class="helper-text">Cada clic es una nueva oportunidad para inspirarte.</p>
+        </div>
+        <div class="safe-area-bottom"></div>
+      </div>
+    </div>
+
+    <!-- ========== STATE 3: Button pressed ========== -->
+    <div class="state-container">
+      <div class="state-label"><span class="state-number">3</span> Botón pulsado</div>
+      <div class="device-frame" data-od-id="state-button-pressed">
+        <div class="status-bar">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 16 16"><path d="M1 11.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-3zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-6zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-9zm3-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-11z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/><path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065z"/><path d="M11.025 10.073a.5.5 0 0 0-.075-.838A6.47 6.47 0 0 0 8 8.5a6.47 6.47 0 0 0-2.95.735.5.5 0 1 0 .565.832A5.47 5.47 0 0 1 8 9.5c.94 0 1.83.235 2.61.64a.5.5 0 0 0 .415-.067z"/><circle cx="8" cy="12.5" r="1.5"/></svg>
+            <svg viewBox="0 0 24 14"><rect x="0" y="1" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="4.5" width="2" height="5" rx="1" fill="currentColor"/><rect x="2" y="3" width="14" height="8" rx="1" fill="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="safe-area-top"></div>
+
+        <div class="app-bar">
+          <div class="app-bar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 5v3c0 1 0 1 1 1z"/>
+            </svg>
+          </div>
+          <span class="app-bar-title">Frase del día</span>
+        </div>
+
+        <div class="header-section">
+          <p class="header-eyebrow">Un poco de inspiración</p>
+          <h1 class="header-title">Encuentra una idea para hoy</h1>
+          <p class="header-subtitle">Pulsa el botón y descubre una nueva frase.</p>
+        </div>
+
+        <div class="quote-card-wrapper">
+          <div class="quote-card">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+            </div>
+            <p class="quote-text">No tienes que ser grande para empezar, pero tienes que empezar para ser grande.</p>
+            <p class="quote-author">Zig Ziglar</p>
+          </div>
+        </div>
+
+        <div class="bottom-section">
+          <button class="generate-button pressed" data-od-id="generate-button-pressed">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            Generar otra frase
+          </button>
+          <p class="helper-text">Cada clic es una nueva oportunidad para inspirarte.</p>
+        </div>
+        <div class="safe-area-bottom"></div>
+      </div>
+    </div>
+
+    <!-- ========== STATE 4: Long quote ========== -->
+    <div class="state-container">
+      <div class="state-label"><span class="state-number">4</span> Frase larga</div>
+      <div class="device-frame" data-od-id="state-long-quote">
+        <div class="status-bar">
+          <span class="status-time">9:41</span>
+          <div class="status-icons">
+            <svg viewBox="0 0 16 16"><path d="M1 11.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-3zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-6zm3-3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-9zm3-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-11z"/></svg>
+            <svg viewBox="0 0 16 16"><path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/><path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065z"/><path d="M11.025 10.073a.5.5 0 0 0-.075-.838A6.47 6.47 0 0 0 8 8.5a6.47 6.47 0 0 0-2.95.735.5.5 0 1 0 .565.832A5.47 5.47 0 0 1 8 9.5c.94 0 1.83.235 2.61.64a.5.5 0 0 0 .415-.067z"/><circle cx="8" cy="12.5" r="1.5"/></svg>
+            <svg viewBox="0 0 24 14"><rect x="0" y="1" width="20" height="12" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="4.5" width="2" height="5" rx="1" fill="currentColor"/><rect x="2" y="3" width="14" height="8" rx="1" fill="currentColor"/></svg>
+          </div>
+        </div>
+        <div class="safe-area-top"></div>
+
+        <div class="app-bar">
+          <div class="app-bar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21z"/>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 5v3c0 1 0 1 1 1z"/>
+            </svg>
+          </div>
+          <span class="app-bar-title">Frase del día</span>
+        </div>
+
+        <div class="header-section">
+          <p class="header-eyebrow">Un poco de inspiración</p>
+          <h1 class="header-title">Encuentra una idea para hoy</h1>
+          <p class="header-subtitle">Pulsa el botón y descubre una nueva frase.</p>
+        </div>
+
+        <div class="quote-card-wrapper">
+          <div class="quote-card" data-od-id="quote-card-long">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+            </div>
+            <p class="quote-text">El único modo de hacer un gran trabajo es amar lo que haces. Si todavía no lo has encontrado, sigue buscando. No te conformes. Como con todos los asuntos del corazón, sabrás cuando lo hayas encontrado.</p>
+            <p class="quote-author">Steve Jobs</p>
+          </div>
+        </div>
+
+        <div class="bottom-section">
+          <button class="generate-button" data-od-id="generate-button-state4">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            Generar otra frase
+          </button>
+          <p class="helper-text">Cada clic es una nueva oportunidad para inspirarte.</p>
+        </div>
+        <div class="safe-area-bottom"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Specification Section -->
+  <section class="spec-section" data-od-id="specification">
+    <h2>Especificación de diseño</h2>
+    <div class="spec-grid">
+
+      <!-- Colors -->
+      <div class="spec-card">
+        <h3>Colores</h3>
+        <div class="spec-row">
+          <span class="spec-label">Fondo</span>
+          <span class="spec-value color-swatch swatch-bg">#F7F8FC</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Superficie</span>
+          <span class="spec-value color-swatch swatch-surface">#FFFFFF</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Texto principal</span>
+          <span class="spec-value color-swatch swatch-fg">#202338</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Texto secundario</span>
+          <span class="spec-value color-swatch swatch-secondary">#74788F</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Color principal</span>
+          <span class="spec-value color-swatch swatch-accent">#5B5FEF</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Principal pulsado</span>
+          <span class="spec-value color-swatch swatch-pressed">#4548C8</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Lavanda suave</span>
+          <span class="spec-value color-swatch swatch-lavender">#EEEFFF</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Borde</span>
+          <span class="spec-value color-swatch swatch-border">#E7E8F0</span>
+        </div>
+      </div>
+
+      <!-- Typography -->
+      <div class="spec-card">
+        <h3>Tipografía</h3>
+        <div class="spec-row">
+          <span class="spec-label">Familia</span>
+          <span class="spec-value">Manrope</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Título app bar</span>
+          <span class="spec-value">17px / 700</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Eyebrow</span>
+          <span class="spec-value">11px / 700 / 0.1em</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Título principal</span>
+          <span class="spec-value">28px / 800</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Subtítulo</span>
+          <span class="spec-value">15px / 400</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Frase</span>
+          <span class="spec-value">24px / 600 / 1.45</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Autor</span>
+          <span class="spec-value">15px / 600</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Botón</span>
+          <span class="spec-value">16px / 700 / 0.02em</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Helper text</span>
+          <span class="spec-value">13px / 500</span>
+        </div>
+      </div>
+
+      <!-- Spacing -->
+      <div class="spec-card">
+        <h3>Espaciado</h3>
+        <div class="spec-row">
+          <span class="spec-label">Márgenes laterales</span>
+          <span class="spec-value">24px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Safe area top</span>
+          <span class="spec-value">56px (44 + 12)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">App bar padding</span>
+          <span class="spec-value">8px 24px 12px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Header → Card</span>
+          <span class="spec-value">16px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Card padding</span>
+          <span class="spec-value">32px 24px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Icon → Quote</span>
+          <span class="spec-value">16px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Quote → Author</span>
+          <span class="spec-value">24px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Button height</span>
+          <span class="spec-value">54px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Button → Helper</span>
+          <span class="spec-value">16px</span>
+        </div>
+      </div>
+
+      <!-- Border Radius -->
+      <div class="spec-card">
+        <h3>Bordes redondeados</h3>
+        <div class="spec-row">
+          <span class="spec-label">Device frame</span>
+          <span class="spec-value">40px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Quote card</span>
+          <span class="spec-value">24px</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Generate button</span>
+          <span class="spec-value">16px</span>
+        </div>
+      </div>
+
+      <!-- Shadows -->
+      <div class="spec-card">
+        <h3>Sombras</h3>
+        <div class="spec-row">
+          <span class="spec-label">Tarjeta</span>
+          <span class="spec-value">0 2 16 rgba(91,95,239,.06)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Botón normal</span>
+          <span class="spec-value">0 4 16 rgba(91,95,239,.24)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">Botón pulsado</span>
+          <span class="spec-value">0 2 8 rgba(91,95,239,.16)</span>
+        </div>
+      </div>
+
+      <!-- Components -->
+      <div class="spec-card">
+        <h3>Componentes Flutter</h3>
+        <div class="spec-row">
+          <span class="spec-label">QuoteAppBar</span>
+          <span class="spec-value">Título centrado + icono</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">QuoteHeader</span>
+          <span class="spec-value">Eyebrow + título + sub</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">QuoteCard</span>
+          <span class="spec-value">Icono + frase + autor</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">GenerateQuoteButton</span>
+          <span class="spec-value">Botón 54px + icono</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
