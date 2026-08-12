@@ -2,7 +2,7 @@
 
 Segundo proyecto de la serie **Mini proyectos Flutter**. Será una aplicación Android de una sola pantalla que mostrará una frase inspiradora y permitirá sustituirla por otra frase local al pulsar un botón.
 
-> Estado actual: base Flutter inicializada exclusivamente para Android y diseño final de OpenDesign incorporado. La interfaz todavía no está implementada.
+> Estado actual: primera versión funcional implementada exclusivamente para Android. Muestra frases locales con su autor y permite seleccionar otra aleatoriamente; queda pendiente el pulido visual final frente al diseño de OpenDesign.
 
 ## Mockup
 
@@ -128,11 +128,11 @@ flutter analyze
 
 ## Próximos pasos
 
-1. Crear el modelo local de frase y autor.
-2. Preparar una lista pequeña de frases.
-3. Construir la pantalla de fuera hacia dentro siguiendo el mockup.
-4. Añadir la selección aleatoria con `setState`.
-5. Verificar frases largas, texto grande y pantallas Android pequeñas.
+1. Evitar que la selección aleatoria repita inmediatamente la frase actual.
+2. Ajustar tipografía, alturas de línea, opacidades y espaciados frente al mockup.
+3. Convertir `QuoteCard` en un widget sin estado y separar los componentes en archivos proporcionales.
+4. Verificar frases largas, texto grande y pantallas Android pequeñas.
+5. Añadir pruebas de widgets para el cambio de frase.
 6. Guardar capturas de la implementación para compararlas con el diseño.
 
 ## Licencia
